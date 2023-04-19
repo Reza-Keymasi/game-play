@@ -42,7 +42,6 @@ const useGames = () => {
 
       return () => controller.abort()
   }, []);
-  console.log(games);
 
   return {games, error, isLoading}
 };
