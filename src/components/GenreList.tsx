@@ -1,4 +1,4 @@
-import useGenre, { Genre } from "../hooks/useGenre";
+import useGenre, { Genre } from "../hooks/useGenres";
 import {
   Button,
   HStack,
@@ -16,10 +16,7 @@ interface Props {
   selectedGenreId?: number;
 }
 
-const GenreList = ({
-  selectedGenreId,
-  onSelectGenre,
-}: Props) => {
+const GenreList = ({ selectedGenreId, onSelectGenre }: Props) => {
   const { data, isLoading, error } = useGenre();
 
   if (error) return null;
