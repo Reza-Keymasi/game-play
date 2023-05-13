@@ -1,4 +1,5 @@
-import useGenre, { Genre } from "../hooks/useGenres";
+import useGenre from "../hooks/useGenres";
+import { Genre } from "../entities/Genre";
 import {
   Button,
   HStack,
@@ -12,11 +13,10 @@ import {
 import getCroppedImageUrl from "../services/image-url";
 import useGameQueryStore from "../store";
 
-
 const GenreList = () => {
   const { data, isLoading, error } = useGenre();
-  const selectedGenreId = useGameQueryStore(s => s.gameQuery.genreId)
-  const setSelectedGenreId = useGameQueryStore(s => s.setGenreId)
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
 
   if (error) return null;
 
